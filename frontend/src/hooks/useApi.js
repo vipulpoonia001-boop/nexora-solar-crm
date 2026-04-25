@@ -1,7 +1,5 @@
 import { useState, useCallback } from 'react';
-import axios from 'axios';
-
-axios.defaults.baseURL = import.meta.env.VITE_API_URL || '';
+import axios from '../utils/api';
 
 export const useApi = () => {
   const [loading, setLoading] = useState(false);

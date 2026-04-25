@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 async function testLogin() {
   try {
-    const response = await fetch('http://localhost:5000/api/auth/login', {
+    const response = await fetch('https://nexora-backend-2zw6.onrender.com/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,7 +18,7 @@ async function testLogin() {
 
     if (data.token) {
       // Now test project creation
-      const projectResponse = await fetch('http://localhost:5000/api/projects', {
+      const projectResponse = await fetch('https://nexora-backend-2zw6.onrender.com/api/projects', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
