@@ -78,7 +78,11 @@ import settingsRoutes from './routes/settings.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const DEFAULT_ORIGINS = ['http://localhost:5173', 'http://localhost:3000'];
+const DEFAULT_ORIGINS = [
+  'http://localhost:5173', 
+  'http://localhost:3000', 
+  'https://nexora-solar-crm.onrender.com'
+];
 const ALLOWED_ORIGINS = (process.env.CORS_ORIGINS || DEFAULT_ORIGINS.join(','))
   .split(',')
   .map((origin) => origin.trim())

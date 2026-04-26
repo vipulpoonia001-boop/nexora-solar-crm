@@ -1,5 +1,6 @@
 import { jsPDF } from 'jspdf';
 import { formatCurrencyPDF, formatDate } from './helpers';
+import { API_URL } from './api';
 
 /**
  * Helper to convert an image URL (e.g., from public folder) to Base64
@@ -47,7 +48,7 @@ export const generateQuotationPDF = async (project, saveToDisk = true) => {
     let unitsPerKw = 120;
     let electricityRate = 8;
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/settings/pricing`);
+      const response = await fetch(`${API_URL}/api/settings/pricing`);
       if (response.ok) {
         const settings = await response.json();
         unitsPerKw = Number(settings.unitsPerKw) || 120;
